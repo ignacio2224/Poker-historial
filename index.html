@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Póker - Historial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🃏 Historial de Póker</h1>
+    </header>
+
+    <section class="card">
+        <h2>Cargar Partida</h2>
+        <form id="partidaForm">
+
+            <label>Ganador:</label>
+            <select id="ganador" required></select>
+
+            <label>Segundo Puesto:</label>
+            <select id="segundo" required></select>
+
+            <label>Tercer Puesto (opcional):</label>
+            <select id="tercero">
+                <option value="">-</option>
+            </select>
+
+            <label>Pozo total ($):</label>
+            <input type="number" id="pozo" required>
+
+            <label>Fecha:</label>
+            <input type="date" id="fecha" required>
+
+            <button type="submit" class="btn">Guardar Partida</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Ganancias Acumuladas</h2>
+        <table id="tablaGanancias">
+            <thead>
+                <tr>
+                    <th>Jugador</th>
+                    <th>Ganancia ($)</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section class="card">
+        <h2>Ranking de Puestos</h2>
+        <table id="tablaPuestos">
+            <thead>
+                <tr>
+                    <th>Jugador</th>
+                    <th>🥇 1° Puestos</th>
+                    <th>🥈 2° Puestos</th>
+                    <th>🥉 3° Puestos</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section class="card">
+        <h2>Historial de Partidas</h2>
+        <table id="tablaHistorial">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Ganador</th>
+                    <th>Segundo</th>
+                    <th>Tercero</th>
+                    <th>Pozo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <!-- Modal para edición -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-content">
+            <h2>Editar Partida</h2>
+
+            <label>Ganador:</label>
+            <select id="editGanador"></select>
+
+            <label>Segundo Puesto:</label>
+            <select id="editSegundo"></select>
+
+            <label>Tercer Puesto:</label>
+            <select id="editTercero"></select>
+
+            <label>Pozo total ($):</label>
+            <input type="number" id="editPozo">
+
+            <label>Fecha:</label>
+            <input type="date" id="editFecha">
+
+            <button class="btn" onclick="guardarEdicion()">Guardar Cambios</button>
+            <button class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
